@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>SharpTheDev | Roblox Scripter</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="SharpTheDev - Professional Roblox Scripter with 5+ years of experience." />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Poppins', Inter, sans-serif;
+      background: radial-gradient(circle at 20% 20%, #0f172a, #05070b);
+      color: #e5e7eb;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    a { color: inherit; text-decoration: none; }
+
+    header {
+      max-width: 1200px;
+      margin: auto;
+      padding: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .logo {
+      width: 42px;
+      height: 42px;
+      background: linear-gradient(135deg, #22d3ee, #8b5cf6);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      color: black;
+    }
+
+    nav a {
+      margin-left: 20px;
+      opacity: 0.7;
+      transition: 0.2s;
+    }
+
+    nav a:hover { opacity: 1; }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 40px 24px 100px;
+    }
+
+    section { margin-bottom: 100px; opacity: 0; transform: translateY(24px); transition: all 0.8s ease; }
+    section.visible { opacity: 1; transform: translateY(0); }
+
+    h1 { font-size: clamp(2.2rem, 4vw, 3.2rem); margin-bottom: 16px; }
+    h2 { font-size: 2rem; margin-bottom: 20px; }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 26px;
+      background: #22d3ee;
+      color: black;
+      border-radius: 12px;
+      font-weight: 600;
+      transition: 0.2s;
+    }
+
+    .btn:hover { transform: scale(1.05); }
+
+    .btn-outline {
+      border: 1px solid #374151;
+      padding: 14px 26px;
+      border-radius: 12px;
+      margin-left: 12px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 60px;
+      align-items: center;
+    }
+
+    .hero img {
+      width: 100%;
+      border-radius: 18px;
+      border: 1px solid #1f2933;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 40px;
+    }
+
+    .card {
+      background: rgba(17, 24, 39, 0.85);
+      border: 1px solid #1f2933;
+      border-radius: 18px;
+      padding: 24px;
+      backdrop-filter: blur(14px);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px) scale(1.01);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+    }
+
+    .filters {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      padding: 8px 16px;
+      border-radius: 999px;
+      border: 1px solid #374151;
+      cursor: pointer;
+      opacity: 0.6;
+    }
+
+    .filter-btn.active {
+      background: #22d3ee;
+      color: black;
+      opacity: 1;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+
+    .gallery img { width: 100%; height: 200px; object-fit: cover; transition: transform 0.4s ease; }
+    .gallery .card:hover img { transform: scale(1.05); }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+    }
+
+    form input, form textarea {
+      width: 100%;
+      background: #0b0e12;
+      border: 1px solid #374151;
+      border-radius: 10px;
+      padding: 12px;
+      margin-bottom: 12px;
+      color: white;
+    }
+
+    footer {
+      text-align: center;
+      opacity: 0.4;
+      margin-top: 100px;
+    }
+
+    .float-btn {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      background: #22d3ee;
+      color: black;
+      padding: 14px 22px;
+      border-radius: 999px;
+      font-weight: 600;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="brand">
+      <div class="logo">S</div>
+      <div>
+        <div><b>SharpTheDev</b></div>
+        <small>Roblox Scripter • 5+ Years</small>
+      </div>
+    </div>
+    <nav>
+      <a href="#work">Work</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Hire Me</a>
+    </nav>
+  </header>
+
+  <div class="container">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div>
+        <h1>Roblox Scripter with <span style="color:#22d3ee">5+</span> Years of Experience</h1>
+        <p>I build clean, optimized, and reliable Roblox systems — from combat and abilities to UI, admin tools, and full gameplay frameworks.</p>
+        <br>
+        <a class="btn" href="#contact">Hire Me</a>
+        <a class="btn-outline" href="#work">View Work</a>
+      </div>
+      <img src="gifs/combatsystem.gif" alt="Preview">
+    </section>
+
+    <!-- ABOUT -->
+    <section>
+      <h2>About Me</h2>
+      <div class="about-grid">
+        <div>
+          <p>I’m SharpTheDev, a professional Roblox scripter with over 5 years of experience building advanced systems for competitive and casual games alike.</p>
+          <br>
+          <ul>
+            <li>✅ 5+ Years Roblox Lua</li>
+            <li>✅ Combat, UI, Abilities, Tools</li>
+            <li>✅ Admin & Moderation Systems</li>
+            <li>✅ Optimization & Bug Fixing</li>
+          </ul>
+        </div>
+        <div class="card">
+          <b>Professional Values</b>
+          <p>Clean code, fast turnaround, strong communication, and long-term support for every project.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- WORK -->
+<section id="work">
+  <h2>Work Showcase</h2>
+
+  <div class="gallery" id="gallery">
+    <!-- Items added with JS -->
+  </div>
+</section>
+
+    <!-- SERVICES -->
+    <section id="services">
+      <h2>Services</h2>
+      <div class="service-grid">
+        <div class="card">Roblox Lua Scripting</div>
+        <div class="card">Combat & Abilities</div>
+        <div class="card">UI & Animations</div>
+        <div class="card">Admin Systems</div>
+        <div class="card">Game Mechanics</div>
+        <div class="card">Optimization</div>
+        <div class="card">Bug Fixing</div>
+        <div class="card">Level & Stats Systems</div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <h2>Hire SharpTheDev</h2>
+      <div class="about-grid">
+        <div class="card">
+          <b>Fastest Way to Contact Me</b>
+          <p>All commissions and work inquiries are handled directly through Discord for speed and clarity.</p>
+          <br>
+          <p id="discord">sharpthedev_</p>
+          <br>
+          <button class="btn" onclick="copyDiscord()">Copy Discord</button>
+          <p style="margin-top:12px;font-size:0.9rem;opacity:0.6;">Click to instantly copy and message me.</p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      © 2025 SharpTheDev — Roblox Scripter
+    </footer>
+  </div>
+
+  <a class="float-btn" href="#contact">Hire</a>
+
+  <script>
+  const galleryData = [
+    { title: 'Combat System', src: 'gifs/combatsystem.gif' },
+    { title: 'Bosses', src: 'gifs/dragon.gif' },
+    { title: 'UI System', src: 'gifs/ui.gif' },
+    { title: 'Abilities', src: 'gifs/abilities.gif' }
+  ];
+
+  const gallery = document.getElementById('gallery');
+
+  function render() {
+    gallery.innerHTML = '';
+    galleryData.forEach(item => {
+      const div = document.createElement('div');
+      div.className = 'card';
+      div.innerHTML = `
+        <img src="${item.src}">
+        <h4>${item.title}</h4>
+      `;
+      gallery.appendChild(div);
+    });
+  }
+
+  function copyDiscord() {
+    navigator.clipboard.writeText(document.getElementById('discord').innerText);
+    alert('Discord copied!');
+  }
+
+  // Scroll reveal animation
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll('section').forEach(sec => observer.observe(sec));
+
+  // Dynamic background animation
+  const bg = document.createElement('div');
+  bg.style.position = 'fixed';
+  bg.style.inset = '0';
+  bg.style.zIndex = '-1';
+  bg.style.background =
+    'radial-gradient(circle at 30% 30%, rgba(34,211,238,0.08), transparent 40%), radial-gradient(circle at 70% 60%, rgba(139,92,246,0.08), transparent 40%)';
+  bg.style.animation = 'bgmove 18s linear infinite alternate';
+  document.body.appendChild(bg);
+
+  const style = document.createElement('style');
+  style.innerHTML = `@keyframes bgmove {
+    0% { filter: hue-rotate(0deg); }
+    100% { filter: hue-rotate(40deg); }
+  }`;
+  document.head.appendChild(style);
+
+  render();
+</script>
+
+
+</body>
+</html>
